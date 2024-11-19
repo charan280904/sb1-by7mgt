@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --success: 142.1 76.2% 36.3%;
+    --warning: 38 92% 50%;
+    --danger: 346.8 77.2% 49.8%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --success: 142.1 70.6% 45.3%;
+    --warning: 48 96% 53%;
+    --danger: 346.8 77.2% 49.8%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+.onboarding-slide {
+  @apply min-h-screen flex flex-col items-center justify-center px-6 py-12 bg-gradient-to-b from-blue-50 to-white;
+}
+
+.auth-container {
+  @apply min-h-screen flex items-center justify-center bg-gradient-to-tr from-blue-50 via-white to-purple-50;
+}
+
+.auth-card {
+  @apply w-full max-w-md p-8 bg-white rounded-2xl shadow-lg;
+}
+
+.dashboard-card {
+  @apply bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-200;
+}
+
+.health-parameter-input {
+  @apply w-full p-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent;
+}
+
+.button-primary {
+  @apply bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors;
+}
+
+.button-secondary {
+  @apply bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium hover:bg-secondary/90 transition-colors;
+}
+
+.status-badge {
+  @apply px-3 py-1 rounded-full text-sm font-medium;
+}
+
+.status-low {
+  @apply bg-success/20 text-success;
+}
+
+.status-medium {
+  @apply bg-warning/20 text-warning;
+}
+
+.status-high {
+  @apply bg-danger/20 text-danger;
+}
